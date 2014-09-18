@@ -50,16 +50,12 @@ void GTOWrapperCpp::sendScoreChallengeToPlayers(std::vector<std::string> players
     GameKitHelper *gameKitHelper = [GameKitHelper sharedGameKitHelper];
     GameTrackingObj *gameTrackingObj = [GameTrackingObj sharedGameTrackingObj];
     
-    
     NSString* mes =[[NSString alloc] initWithUTF8String:message];
-    
     NSMutableArray *array = [[[NSMutableArray alloc]init]autorelease];
     
     for (std::vector<std::string>::iterator it = players.begin(); it != players.end(); it++) {
-        
         NSString *string = [NSString stringWithUTF8String:it->c_str()];
-        [array addObject:string];
-        
+        [array addObject:string];        
     }
     
     [gameKitHelper sendScoreChallengeToPlayers:array withScore:score message:mes withGameTrackingObj:gameTrackingObj];
@@ -70,17 +66,11 @@ void GTOWrapperCpp::retriveChallenge(uint64_t context){
     __block GameTrackingObjCpp gtoCpp;
     if (_delegate!=NULL){
         gtoCpp.tapIteration = new std::vector<int>();
-        gtoCpp.seed = new std::vector<double>();
     
         [[GameTrackingEngine sharedClient]
          retrieveGameTrackingDetailsForKey:context onSuccess:^(GameTrackingObj *gameTrackingObj)
          {
-             double seed;
-             for (int i=0; i<[gameTrackingObj.seed count]; i++){
-                 seed =[[gameTrackingObj.seed objectAtIndex:i] doubleValue];
-                 NSLog(@"%f",seed);
-                 gtoCpp.seed->push_back(seed);
-             }
+             gtoCpp.seed = gameTrackingObj.seed;
          
              int tap;
              for (int i=0; i<[gameTrackingObj.tapIteration count]; i++) {

@@ -43,7 +43,6 @@ class GameScene : public CCLayer, public GKHDelegate, public GTODelegate
     GTOWrapperCpp*  _tracking;
     GameTrackingObjCpp _trackedInfo;
     vector<int>::iterator   _tapVectorIterator;
-    vector<double>::iterator _seedVectorIterator;
     
     
     int             _score;

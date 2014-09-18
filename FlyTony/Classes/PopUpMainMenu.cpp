@@ -235,6 +235,7 @@ void PopUpMainMenu::drawStartMenu(){
     
     
     //Challenge Button
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     CCMenuItemImage* challengeBtn= CCMenuItemImage::create();
     CCScale9Sprite* challengeImg= CCScale9Sprite::create("buttons/violet_bg.png");
     challengeImg->setContentSize(CCSizeMake(410, 100));
@@ -262,6 +263,9 @@ void PopUpMainMenu::drawStartMenu(){
     challengeBtn->setVisible(false);
     
     CCMenu* menu = CCMenu::create(btn, challengeBtn, NULL);
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    CCMenu* menu = CCMenu::create(btn, NULL);
+#endif
     menu->setPosition(CCPointZero);
     menu->setTouchPriority(-303);
     mainLayer->addChild(menu, kForeground, kTagMainMenu);
@@ -345,10 +349,8 @@ void PopUpMainMenu::tableCellTouched(CCTableView* table, CCTableViewCell* cell)
     backMenu->setTouchEnabled(false);
     _tableView->setTouchEnabled(false);
     
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     GTOWrapperCpp gto;
-    gto.retriveChallenge(_challenges[cell->getIdx()].gkScore.context);
-#endif
+    gto.retriveChallenge(_challenges[cell->getIdx()].gkScore.context);    
     
     
 }
@@ -472,9 +474,11 @@ void PopUpMainMenu::onChallengeLoaded(std::map<std::string, GKChallengeCpp> chal
         gkh.getPlayerInfo(array);
     }
     
+    
 }
 
 void PopUpMainMenu::onPlayerInfoReceived(std::vector<GKPlayerCpp> playerInfo){
+    
     _friends=playerInfo;
     _tableView->reloadData();
 }
@@ -485,7 +489,6 @@ void PopUpMainMenu::onPlayerInfoReceived(std::vector<GKPlayerCpp> playerInfo){
 void PopUpMainMenu::onGameTrackingObtained(GameTrackingObjCpp obj){
     GameTrackingObjCpp* gameTO = new GameTrackingObjCpp();
     gameTO->score=obj.score;
-    gameTO->seed=new vector<double>();
     gameTO->seed=obj.seed;
     gameTO->tapIteration=new vector<int>();
     gameTO->tapIteration=obj.tapIteration;

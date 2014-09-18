@@ -200,8 +200,6 @@
 		2248D521191B9C2E00BB3EBE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248D520191B9C2E00BB3EBE /* Default-568h@2x.png */; };
 		227A537118D9DEE000DC1705 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227A536D18D9DEE000DC1705 /* CoreTelephony.framework */; };
 		227A537218D9DEE000DC1705 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227A536E18D9DEE000DC1705 /* MessageUI.framework */; };
-		227CC16A193611CA0073EBB2 /* GKHDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227CC165193611CA0073EBB2 /* GKHDelegate.cpp */; };
-		227CC16B193611CA0073EBB2 /* GTODelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227CC168193611CA0073EBB2 /* GTODelegate.cpp */; };
 		227F39B0191BD79F0019B0F2 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 227F39A6191BD79F0019B0F2 /* Icon-72.png */; };
 		227F39B1191BD79F0019B0F2 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 227F39A7191BD79F0019B0F2 /* Icon-72@2x.png */; };
 		227F39B2191BD79F0019B0F2 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 227F39A8191BD79F0019B0F2 /* Icon-Small-50.png */; };
@@ -230,6 +228,7 @@
 		22AC5F3218D9B92400663A68 /* value.c in Sources */ = {isa = PBXBuildFile; fileRef = 22AC5F2318D9B92400663A68 /* value.c */; };
 		22C1F2E118D9F1C60077427D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C1F2E018D9F1C60077427D /* GameKit.framework */; };
 		22C1F2EB18D9F2F10077427D /* GameKitHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22C1F2E418D9F2F10077427D /* GameKitHelper.mm */; };
+		22C1F2EC18D9F2F10077427D /* GKHDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22C1F2E618D9F2F10077427D /* GKHDelegate.cpp */; };
 		22C1F2ED18D9F2F10077427D /* GKHWrapperCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22C1F2E918D9F2F10077427D /* GKHWrapperCpp.mm */; };
 		22C1F2EE18D9F2F10077427D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22C1F2EA18D9F2F10077427D /* README.md */; };
 		22CB835418E4229000B61A80 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CB834218E4229000B61A80 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -250,6 +249,7 @@
 		22F21AB8191B8465007AA330 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227A537018D9DEE000DC1705 /* SystemConfiguration.framework */; };
 		22F21AB9191B847C007AA330 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		22F21ABB191B8498007AA330 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		22F370B018EEC942003C9090 /* GTODelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22F370AE18EEC942003C9090 /* GTODelegate.cpp */; };
 		22F873A218E464F1001EC1E8 /* GameTrackingObj.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22F873A118E464F1001EC1E8 /* GameTrackingObj.mm */; };
 		375BD4C31868411B0024609E /* ObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 375BD4BB1868411B0024609E /* ObjectFactory.cpp */; };
 		375BD4C41868411B0024609E /* TriggerBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 375BD4BD1868411B0024609E /* TriggerBase.cpp */; };
@@ -745,10 +745,6 @@
 		227A536E18D9DEE000DC1705 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		227A536F18D9DEE000DC1705 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		227A537018D9DEE000DC1705 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		227CC165193611CA0073EBB2 /* GKHDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GKHDelegate.cpp; sourceTree = "<group>"; };
-		227CC166193611CA0073EBB2 /* GKHDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKHDelegate.h; sourceTree = "<group>"; };
-		227CC168193611CA0073EBB2 /* GTODelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GTODelegate.cpp; sourceTree = "<group>"; };
-		227CC169193611CA0073EBB2 /* GTODelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTODelegate.h; sourceTree = "<group>"; };
 		227F39A6191BD79F0019B0F2 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "iOS6/Icon-72.png"; sourceTree = "<group>"; };
 		227F39A7191BD79F0019B0F2 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "iOS6/Icon-72@2x.png"; sourceTree = "<group>"; };
 		227F39A8191BD79F0019B0F2 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "iOS6/Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -791,6 +787,8 @@
 		22C1F2E318D9F2F10077427D /* GameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameKitHelper.h; sourceTree = SOURCE_ROOT; };
 		22C1F2E418D9F2F10077427D /* GameKitHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameKitHelper.mm; sourceTree = SOURCE_ROOT; };
 		22C1F2E518D9F2F10077427D /* GKCppAlternatives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCppAlternatives.h; sourceTree = SOURCE_ROOT; };
+		22C1F2E618D9F2F10077427D /* GKHDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GKHDelegate.cpp; sourceTree = SOURCE_ROOT; };
+		22C1F2E718D9F2F10077427D /* GKHDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKHDelegate.h; sourceTree = SOURCE_ROOT; };
 		22C1F2E818D9F2F10077427D /* GKHWrapperCpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKHWrapperCpp.h; sourceTree = SOURCE_ROOT; };
 		22C1F2E918D9F2F10077427D /* GKHWrapperCpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GKHWrapperCpp.mm; sourceTree = SOURCE_ROOT; };
 		22C1F2EA18D9F2F10077427D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -831,6 +829,8 @@
 		22EDA21E1923AECD00C3346D /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
 		22EDA21F1923AECD00C3346D /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
 		22EDA2201923AECD00C3346D /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		22F370AE18EEC942003C9090 /* GTODelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GTODelegate.cpp; sourceTree = SOURCE_ROOT; };
+		22F370AF18EEC942003C9090 /* GTODelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTODelegate.h; sourceTree = SOURCE_ROOT; };
 		22F873A018E464F1001EC1E8 /* GameTrackingObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTrackingObj.h; sourceTree = SOURCE_ROOT; };
 		22F873A118E464F1001EC1E8 /* GameTrackingObj.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameTrackingObj.mm; sourceTree = SOURCE_ROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1503,8 +1503,6 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				227CC164193611CA0073EBB2 /* GameCenter */,
-				227CC167193611CA0073EBB2 /* GameTracking */,
 				2241D2E0191CC596002ED6DD /* NDKHelper */,
 				22C07A4718E57E2C004345A8 /* TableViewersCell */,
 				22AC5F1318D9B92400663A68 /* jansson */,
@@ -1800,26 +1798,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		227CC164193611CA0073EBB2 /* GameCenter */ = {
-			isa = PBXGroup;
-			children = (
-				227CC165193611CA0073EBB2 /* GKHDelegate.cpp */,
-				227CC166193611CA0073EBB2 /* GKHDelegate.h */,
-			);
-			name = GameCenter;
-			path = ../Classes/GameCenter;
-			sourceTree = "<group>";
-		};
-		227CC167193611CA0073EBB2 /* GameTracking */ = {
-			isa = PBXGroup;
-			children = (
-				227CC168193611CA0073EBB2 /* GTODelegate.cpp */,
-				227CC169193611CA0073EBB2 /* GTODelegate.h */,
-			);
-			name = GameTracking;
-			path = ../Classes/GameTracking;
-			sourceTree = "<group>";
-		};
 		22AC5F1318D9B92400663A68 /* jansson */ = {
 			isa = PBXGroup;
 			children = (
@@ -1860,6 +1838,8 @@
 				22C1F2E318D9F2F10077427D /* GameKitHelper.h */,
 				22C1F2E418D9F2F10077427D /* GameKitHelper.mm */,
 				22C1F2E518D9F2F10077427D /* GKCppAlternatives.h */,
+				22C1F2E618D9F2F10077427D /* GKHDelegate.cpp */,
+				22C1F2E718D9F2F10077427D /* GKHDelegate.h */,
 				22C1F2E818D9F2F10077427D /* GKHWrapperCpp.h */,
 				22C1F2E918D9F2F10077427D /* GKHWrapperCpp.mm */,
 				22C1F2EA18D9F2F10077427D /* README.md */,
@@ -1902,6 +1882,8 @@
 				22F873A118E464F1001EC1E8 /* GameTrackingObj.mm */,
 				22A521C218EEB8C200575AC6 /* GTOWrapperCpp.h */,
 				22A521C318EEB8C200575AC6 /* GTOWrapperCpp.mm */,
+				22F370AE18EEC942003C9090 /* GTODelegate.cpp */,
+				22F370AF18EEC942003C9090 /* GTODelegate.h */,
 			);
 			name = GameTracking;
 			sourceTree = "<group>";
@@ -2541,7 +2523,6 @@
 				15A3DA411682F826002FB0C5 /* CCMenuItemLoader.cpp in Sources */,
 				15A3DA421682F826002FB0C5 /* CCNode+CCBRelativePositioning.cpp in Sources */,
 				15A3DA431682F826002FB0C5 /* CCNodeLoader.cpp in Sources */,
-				227CC16A193611CA0073EBB2 /* GKHDelegate.cpp in Sources */,
 				15A3DA441682F826002FB0C5 /* CCNodeLoaderLibrary.cpp in Sources */,
 				15A3DA451682F826002FB0C5 /* CCParticleSystemQuadLoader.cpp in Sources */,
 				22AC5F2F18D9B92400663A68 /* strbuffer.c in Sources */,
@@ -2573,11 +2554,11 @@
 				15A3DA5B1682F826002FB0C5 /* CCTableView.cpp in Sources */,
 				15A3DA5C1682F826002FB0C5 /* CCTableViewCell.cpp in Sources */,
 				15A3DA5D1682F826002FB0C5 /* HttpClient.cpp in Sources */,
+				22C1F2EC18D9F2F10077427D /* GKHDelegate.cpp in Sources */,
 				15A3DA5E1682F826002FB0C5 /* CCPhysicsDebugNode.cpp in Sources */,
 				375BD5131868454E0024609E /* CCActionObject.cpp in Sources */,
 				15A3DA5F1682F826002FB0C5 /* CCPhysicsSprite.cpp in Sources */,
 				15A3DAEB1682F8A6002FB0C5 /* CDAudioManager.m in Sources */,
-				227CC16B193611CA0073EBB2 /* GTODelegate.cpp in Sources */,
 				15A3DAEC1682F8A6002FB0C5 /* CDOpenALSupport.m in Sources */,
 				22A521C418EEB8C200575AC6 /* GTOWrapperCpp.mm in Sources */,
 				22AC5F1018D9B8AC00663A68 /* GameScene.cpp in Sources */,
@@ -2596,6 +2577,7 @@
 				1A8F3B71175E05DA00049216 /* Atlas.cpp in Sources */,
 				1A8F3B72175E05DA00049216 /* AtlasAttachmentLoader.cpp in Sources */,
 				224325FD1935ECCC0098D901 /* ProtocolSocial.mm in Sources */,
+				22F370B018EEC942003C9090 /* GTODelegate.cpp in Sources */,
 				1A8F3B73175E05DA00049216 /* Attachment.cpp in Sources */,
 				22AC5F2B18D9B92400663A68 /* hashtable.c in Sources */,
 				1A8F3B74175E05DA00049216 /* AttachmentLoader.cpp in Sources */,

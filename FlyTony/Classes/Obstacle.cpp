@@ -84,12 +84,8 @@ bool Obstacle::init()
 }
 
 
-void Obstacle::setupRandomPosition(float seed)
+void Obstacle::setupRandomPosition(float random)
 {
-    // value between 0.f and 1.f
-    srand(seed);
-    float random = (float)((rand()%10)*0.1);
-    
     float range = maximumYPositionTopPipe - minimumYPositionTopPipe;
     
     _topPipe->setPosition(ccp(_topPipe->getPositionX(), _screenSize.height - (minimumYPositionTopPipe + (random * range))));

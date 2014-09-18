@@ -47,7 +47,7 @@ static GameTrackingObj *instanceOfGameTrackingObj;
 - (id) init {
     self = [super init];
     self.tapIteration = [NSMutableArray array];
-    self.seed = [NSMutableArray array];
+    self.seed = 0;
     self.score = 0;
     return self;
     
@@ -62,10 +62,7 @@ static GameTrackingObj *instanceOfGameTrackingObj;
 
 
 - (void) addSeed:(double) seme{
-    if (self.seed == nil) {
-        self.seed = [NSMutableArray array];
-    }
-    [self.seed addObject:@(seme)];
+    self.seed = seme;
 }
 
 
@@ -76,7 +73,6 @@ static GameTrackingObj *instanceOfGameTrackingObj;
 
 - (void) clear {
     [self.tapIteration removeAllObjects];
-    [self.seed removeAllObjects];
 }
 
 @end

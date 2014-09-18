@@ -432,6 +432,9 @@ void GameScene::flyTony(cocos2d::CCObject *obj)
     SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
     
     CCMenuItem* item = (CCMenuItem*) obj;
+    float seed;
+    seed =rand()%INT64_MAX;
+    
     
     float btnX=_layerColorWait->getContentSize().width/2-130;
     float btnY=_layerColorWait->getContentSize().height/2-180;
@@ -439,10 +442,10 @@ void GameScene::flyTony(cocos2d::CCObject *obj)
     if (item->getUserData()!=NULL){
         GameTrackingObjCpp* gto = (struct GameTrackingObjCpp*) item->getUserData();
         _trackedInfo.seed=gto->seed;
+        seed = _trackedInfo.seed;
         _trackedInfo.tapIteration=gto->tapIteration;
         _trackedInfo.score=gto->score;
         _tapVectorIterator=_trackedInfo.tapIteration->begin();
-        _seedVectorIterator=_trackedInfo.seed->begin();
         _ghostDeathIteration=_trackedInfo.tapIteration->at(_trackedInfo.tapIteration->size()-1);
         _trackedInfo.tapIteration->pop_back();
         _isChallenge=true;
@@ -456,6 +459,9 @@ void GameScene::flyTony(cocos2d::CCObject *obj)
         SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Suoni/tonyfly.mp3", true);
         SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(0.5);
     }
+    
+    srand(seed);
+    _tracking->addSeed(seed);
     
     this->spawnNewObstacle();
     this->spawnNewObstacle();
@@ -516,7 +522,6 @@ void GameScene::update(float dt)
                 _ghost->runAction(animate);
             }
             if(_iterator==*_tapVectorIterator){
-                CCLOG("yvelghost %f",_yVelGhost);
                 _yVelGhost = (FORCE_Y);
                 endTap=*_tapVectorIterator+5;
                 ++_tapVectorIterator;
@@ -703,19 +708,10 @@ void GameScene::spawnNewObstacle()
     Obstacle* obstacle = Obstacle::create();
     obstacle->setPosition(position);
     
-    float seed;
-    
-    if(_isChallenge && _seedVectorIterator!=_trackedInfo.seed->end()){
-        seed = *_seedVectorIterator;
-        _seedVectorIterator++;
-    }
-    else{
-        seed =rand()%INT64_MAX;
-        
-    }
+    float random = (float) ((rand() % 10) * 0.1);
+   
     //register the seed
-    _tracking->addSeed(seed);
-    obstacle->setupRandomPosition(seed);
+    obstacle->setupRandomPosition(random);
     
     _foreground->addChild(obstacle,DrawingOrderPipes);
     _obstacles->addObject(obstacle);
@@ -922,7 +918,6 @@ void GameScene::restart(cocos2d::CCObject *obj)
         
         //Reset game info
         _tapVectorIterator=_trackedInfo.tapIteration->begin();
-        _seedVectorIterator=_trackedInfo.seed->begin();
         _isChallenge=true;
         _challengeWin=false;
         

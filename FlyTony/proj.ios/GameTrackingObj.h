@@ -13,7 +13,7 @@
 @interface GameTrackingObj : NSObject
 
 @property (nonatomic, strong) NSMutableArray *tapIteration;
-@property (nonatomic, strong) NSMutableArray *seed;
+@property (nonatomic, readwrite) double seed;
 @property (nonatomic, readwrite) NSInteger score;
 
 + (GameTrackingObj*) sharedGameTrackingObj;

@@ -7,5 +7,5 @@
     #import <UIKit/UIKit.h>
     #import <Security/Security.h>
 
-    #define BASE_URL @"http://www.pattycombat.com/FlyTony/"
+    #define BASE_URL @"http://192.168.0.103"
 #endif

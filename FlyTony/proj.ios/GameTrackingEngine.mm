@@ -53,8 +53,7 @@ static GameTrackingEngine *istanceOfGameTrackingEngine;
                   GameTrackingObj *gameTrackingObj = [[GameTrackingObj alloc] init];
                   NSArray *array =responceObject[kTapIteration];
                   gameTrackingObj.tapIteration = [array mutableCopy];
-                  array=(NSMutableArray *)responceObject[kSeedKey];
-                  gameTrackingObj.seed = [array mutableCopy];
+                  gameTrackingObj.seed = [responceObject[kSeedKey] doubleValue];
                   gameTrackingObj.score = [responceObject[kScore] intValue];
                   
                   responceBlock(gameTrackingObj);
@@ -75,7 +74,7 @@ static GameTrackingEngine *istanceOfGameTrackingEngine;
     @{kTapIteration:
           gameTrackingObj.tapIteration,
       kSeedKey:
-          gameTrackingObj.seed,
+          [NSNumber numberWithDouble:gameTrackingObj.seed],
       kScore:
           [NSNumber numberWithInt:gameTrackingObj.score]};
     
@@ -107,7 +106,7 @@ static GameTrackingEngine *istanceOfGameTrackingEngine;
     @{kTapIteration:
           gameTrackingObj.tapIteration,
       kSeedKey:
-          gameTrackingObj.seed,
+          [NSNumber numberWithDouble:gameTrackingObj.seed],
       kScore:
           [NSNumber numberWithInt:gameTrackingObj.score]};
     

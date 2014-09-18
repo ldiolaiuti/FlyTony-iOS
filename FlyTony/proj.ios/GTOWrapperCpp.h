@@ -18,7 +18,7 @@ class GTODelegate;
 struct GameTrackingObjCpp{
 public:
     std::vector<int> *tapIteration;
-    std::vector<double> *seed;
+    double seed;
     int score;
 };
 
