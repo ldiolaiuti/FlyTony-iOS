@@ -432,7 +432,7 @@ void GameScene::flyTony(cocos2d::CCObject *obj)
     SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
     
     CCMenuItem* item = (CCMenuItem*) obj;
-    float seed;
+    int seed;
     seed =rand()%INT64_MAX;
     
     
@@ -459,6 +459,7 @@ void GameScene::flyTony(cocos2d::CCObject *obj)
         SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Suoni/tonyfly.mp3", true);
         SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(0.5);
     }
+    CCLog("Seed: %d", seed);
     
     srand(seed);
     _tracking->addSeed(seed);
@@ -711,6 +712,7 @@ void GameScene::spawnNewObstacle()
     float random = (float) ((rand() % 10) * 0.1);
    
     //register the seed
+    CCLog("Random: %f", random);
     obstacle->setupRandomPosition(random);
     
     _foreground->addChild(obstacle,DrawingOrderPipes);
@@ -913,6 +915,10 @@ void GameScene::restart(cocos2d::CCObject *obj)
         btn->setNormalSpriteFrame(CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("cloud"));
         btn->setSelectedSpriteFrame(CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("cloud"));
         
+        int seed;
+        seed = _trackedInfo.seed;
+        srand(seed);
+        
         _layerColorWait->removeAllChildrenWithCleanup(true);
         _layerColorWait->addChild(btn);
         
@@ -936,6 +942,11 @@ void GameScene::restart(cocos2d::CCObject *obj)
     
         _layerColorWait->removeAllChildrenWithCleanup(true);
         _layerColorWait->addChild(btn);
+        
+        int seed;
+        seed =rand()%INT64_MAX;
+    
+        srand(seed);
     
         SimpleAudioEngine::sharedEngine()->playEffect("Suoni/pop.mp3");
         btn->setPosition(ccp(_layerColorWait->getContentSize().width/2-130, _layerColorWait->getContentSize().height/2+130));
